@@ -1,8 +1,10 @@
 import './App.css';
+import BeerController from './controller/beerController.js';
 
 function App() {
-    return (
-
+    BeerController.getBeers();
+    return ( <
+        h1 > hello < /h1>
     );
 }
 
