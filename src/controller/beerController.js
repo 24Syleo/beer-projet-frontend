@@ -1,22 +1,17 @@
-import 'dotenv/config';
 import AxiosService from '../service/AxiosService.js';
 
 class BeerController {
 
-    _url;
-
-    constructor() {
-        this._url = process.env.URL;
-    }
+    static urlBeer = 'http://localhost:3100/beer';
 
     //Liste de bieres
     static async getBeers() {
         try {
-            const res = await AxiosService.getAxiosService(this._url);
-            console.log(res);
-            return (res);
+            const res = await AxiosService.getAxiosService(BeerController.urlBeer);
+            console.log(res.data);
+            return res.data;
         } catch (e) {
-            console.error(e);
+            console.log('controller', e);
             return e;
         }
     }

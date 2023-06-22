@@ -6,11 +6,9 @@ class AxiosService {
     static async getAxiosService(url) {
         try {
             const res = await axios.get(url);
-            console.log('axios', res);
-            return (res);
+            return res;
         } catch (e) {
-            console.log('axios', e);
-            return (e);
+            return e.message;
         }
     }
 }
