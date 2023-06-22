@@ -1,14 +1,12 @@
 import './App.css';
 import React from 'react';
-import BeerController from './controller/beerController.js';
+import Home from './page/home.js';
+import BarreDeNav from './component/Navbar.js';
+
 
 function App() {
+    return ( < Home navbar = { < BarreDeNav / > }
+        / > );
+    }
 
-    BeerController.getBeers();
-
-    return ( <
-        h1 > hello < /h1>
-    );
-}
-
-export default App;
+    export default App;
