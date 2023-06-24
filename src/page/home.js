@@ -7,8 +7,9 @@ function Home(props) {
         Stack gap = { 2 } >
         <
         Container > { props.navbar } < /Container> <
-        Container > { props.card } < /Container> <
-        /Stack>
+        Container > { props.card } <
+        /Container> < /
+        Stack >
     );
 }
 
