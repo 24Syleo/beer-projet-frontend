@@ -11,14 +11,8 @@ function App() {
     console.log(beers);
 
     return ( <
-            Home navbar = { < BarreDeNav / > }
-            card = {
-                beers.map(beer => < CardBeer image = { beer.image_url }
-                    name = { beer.name }
-                    tagline = { beer.tagline }
-                    />) } /
-                    >
-                );
-            }
-
-            export default App;
+        Home navbar = { < BarreDeNav / > }
+        card = { < CardBeer / > }
+        />);
+    }
+    export default App;
