@@ -6,13 +6,15 @@ function CardBeer(props) {
     return (
 
         <
-        Col sm = { 4 } >
+        Col md = { 4 }
+        className = "my-2" >
         <
         Card style = {
-            { width: '18rem', height: '40rem' }
+            { width: '18rem' }
         } >
         <
-        Card.Img variant = "top"
+        Card.Img className = 'imageCard'
+        variant = "top"
         src = { props.image }
         / > <
         Card.Body >

@@ -10,7 +10,7 @@ function Home(props) {
         Container > { props.navbar } < /Container> <
         Container >
         <
-        Row > { props.card } < /
+        Row className = 'my-2 justify-content-center' > { props.card } < /
         Row > <
         /Container> < /
         Stack >
