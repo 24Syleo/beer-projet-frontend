@@ -4,6 +4,7 @@ import Home from './page/home.js';
 import BarreDeNav from './component/Navbar.js';
 import CardBeer from './component/CardBeer.js';
 import BeerController from './controller/beerController.js';
+import AddBeer from './component/AddBeer.js';
 
 
 function App() {
@@ -25,16 +26,18 @@ function App() {
     console.log(beers);
 
     return ( <
-            Home navbar = { < BarreDeNav / > }
-            card = {
-                beerList.map((beer, i) => {
-                        return ( < CardBeer key = { i }
-                            image = { beer.image_url }
-                            name = { beer.name }
-                            tagline = { beer.tagline }
-                            / > )
-                        })
+            Home navbar = { < BarreDeNav
+                children = { < AddBeer / > }
+                / > }
+                card = {
+                    beerList.map((beer, i) => {
+                            return ( < CardBeer key = { i }
+                                image = { beer.image_url }
+                                name = { beer.name }
+                                tagline = { beer.tagline }
+                                / > )
+                            })
+                    }
+                    />);
                 }
-                />);
-            }
-            export default App;
+                export default App;

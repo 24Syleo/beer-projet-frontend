@@ -1,7 +1,7 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import React from 'react';
 
-function BarreDeNav() {
+function BarreDeNav(props) {
     return ( <
         Navbar bg = "light"
         variant = "light" >
@@ -12,7 +12,7 @@ function BarreDeNav() {
         <
         Nav.Link href = "#home" > home < /Nav.Link> <
         Nav.Link href = "#features" > features < /Nav.Link> < /
-        Nav > <
+        Nav > { props.children } <
         /Container> < /
         Navbar >
     )
