@@ -7,13 +7,13 @@ function CardBeer(props) {
 
         <
         Col md = { 4 }
-        className = "my-2" >
+        className = "my-2 text-center" >
         <
         Card style = {
-            { width: '18rem' }
+            { width: '14rem' }
         } >
         <
-        Card.Img className = 'imageCard'
+        Card.Img className = 'imageCard mx-auto'
         variant = "top"
         src = { props.image }
         / > <
