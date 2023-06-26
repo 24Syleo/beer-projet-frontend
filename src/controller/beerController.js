@@ -19,8 +19,9 @@ class BeerController {
     static async createBeer(beerData){
         try{
             console.log(beerData);
-            const myJson = JSON.stringify(beerData);
-            console.log(myJson);
+            const beer = await AxiosService.postAxiosService(BeerController.urlBeer,beerData);
+            console.log(beer);
+            return beer;
         }
         catch(e){
             console.error('post controller error', e);

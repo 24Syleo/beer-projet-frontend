@@ -20,6 +20,8 @@ function App() {
     };
 
     const nameChange = (evt)=>{
+        console.log(evt.target.value);
+        evt.preventDefault();
         setNameBeer(evt.target.value);
     }
 
@@ -32,11 +34,12 @@ function App() {
     }
 
     const valider = () => {
+        console.log('ici');
         createBeer();
     }
 
     const createBeer = async () => {
-        const dataBeer = [nameBeer];
+        const dataBeer = {"name":nameBeer, "tagline":tagBeer, "image_url":imgBeer};
         console.log('app', dataBeer);
         const res = await BeerController.createBeer(dataBeer);
         console.log('response biere', res);
@@ -52,8 +55,12 @@ function App() {
             Home navbar = { < BarreDeNav
                 children = { < AddBeer
                         validerBeer={valider}
-                        value={nameBeer}
-                        onChange={nameChange}
+                        ValueName={nameBeer}
+                        ChangeName={nameChange}
+                        ValueTag={tagBeer}
+                        ChangeTag={tagChange}
+                        ValueImg={imgBeer}
+                        ChangeImg={imgChange}
                     / > }
                 / > }
                 card = {

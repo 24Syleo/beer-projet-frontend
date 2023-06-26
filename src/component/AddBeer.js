@@ -14,9 +14,9 @@ function AddBeer(props) {
             <Modal show = { show } onHide = { handleClose } >
             <Modal.Body>
                 <Form onSubmit={props.validerBeer}>
-                    <Form.Control className='my-2' type='text' placeholder='name' value={props.Value} onChange={props.Change} autoFocus/>
-                    <Form.Control className='my-2' type='text' placeholder='tagline' value={props.Value} onChange={props.Change} autoFocus/>
-                    <Form.Control className='my-2' type='text' placeholder='image' value={props.Value} onChange={props.Change} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='name' value={props.ValueName} onChange={props.ChangeName} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='tagline' value={props.ValueTag} onChange={props.ChangeTag} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='image' value={props.ValueImg} onChange={props.ChangeImg} autoFocus/>
                     <Button variant='outline-success' type='submit'>Valider</Button>
                 </Form>
             </Modal.Body>
