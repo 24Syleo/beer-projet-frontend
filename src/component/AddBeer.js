@@ -17,6 +17,7 @@ function AddBeer(props) {
                     <Form.Control className='my-2' type='text' placeholder='name' value={props.ValueName} onChange={props.ChangeName} autoFocus/>
                     <Form.Control className='my-2' type='text' placeholder='tagline' value={props.ValueTag} onChange={props.ChangeTag} autoFocus/>
                     <Form.Control className='my-2' type='text' placeholder='image' value={props.ValueImg} onChange={props.ChangeImg} autoFocus/>
+                    {props.checkIng}
                     <Button variant='outline-success' type='submit'>Valider</Button>
                 </Form>
             </Modal.Body>
