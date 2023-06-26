@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-function AddBeer() {
+function AddBeer(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -14,9 +14,9 @@ function AddBeer() {
             <Modal show = { show } onHide = { handleClose } >
             <Modal.Body>
                 <Form>
-                    <Form.Control className='my-2' type='text' placeholder='name' autoFocus/>
-                    <Form.Control className='my-2' type='text' placeholder='tagline' autoFocus/>
-                    <Form.Control className='my-2' type='text' placeholder='image' autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='name' value={props.nameValue} onChange={props.nameChange} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='tagline' value={props.tagValue} onChange={props.tagChange} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='image' value={props.imgValue} onChange={props.imgChange} autoFocus/>
                     <Button variant='outline-success' type='submit'>Valider</Button>
                 </Form>
             </Modal.Body>
