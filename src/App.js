@@ -42,16 +42,26 @@ function App() {
         setImgBeer(evt.target.value);
     }
 
+    const ingChange = (evt)=>{
+        console.log(evt.target.checked)
+        let ingListBeer = [...ingBeer]
+        if(evt.target.checked){
+            ingListBeer = [...ingBeer,evt.target.id];
+        }
+        console.log(ingListBeer);
+        setIngBeer(ingListBeer);
+    } 
+
     const valider = () => {
         console.log('ici');
         createBeer();
     }
 
     const createBeer = async () => {
-        const dataBeer = {"name":nameBeer, "tagline":tagBeer, "image_url":imgBeer};
-        console.log('app', dataBeer);
+        const dataBeer = {"name":nameBeer, "tagline":tagBeer, "image_url":imgBeer,"ingredients":ingBeer};
+        console.log(dataBeer);
         const res = await BeerController.createBeer(dataBeer);
-        console.log('response biere', res);
+        console.log('creation',res);
     }
 
     useEffect(() => {
@@ -59,10 +69,8 @@ function App() {
     }, []);
 
     useEffect(() => {
-        listIng();
+        listIng()
     }, []);
-
-    console.log(ingList);
 
     return ( <
             Home navbar = { < BarreDeNav
@@ -80,6 +88,7 @@ function App() {
                                     key={i}
                                     idIng={ing._id}
                                     Name={ing.name}
+                                    ChangeIng={ingChange}
                                     />)
                             })
                         }
