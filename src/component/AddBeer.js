@@ -7,24 +7,16 @@ function AddBeer() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    return ( <
-        >
-        <
-        Button variant = "secondary"
-        onClick = { handleShow } >
-        Ajouter une bière <
-        /Button>
-
-        <
-        Modal show = { show }
-        onHide = { handleClose } >
-        <
-        Button variant = "danger"
-        onClick = { handleClose } > Close < /Button>  <
-        /
-        Modal >
-        <
-        />
+    return ( 
+        <>
+            <Button variant = "secondary" onClick = { handleShow } >Ajouter une bière </Button>
+            <Modal show = { show } onHide = { handleClose } >
+            <Modal.Footer>
+                
+                <Button variant = "danger" onClick = { handleClose } > Close </Button>
+            </Modal.Footer>
+            </Modal >
+        </>
     )
 }
 

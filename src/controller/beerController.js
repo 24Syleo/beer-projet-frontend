@@ -15,6 +15,19 @@ class BeerController {
             return e;
         }
     }
+
+    //creer une biere
+    static async createBeer(beerData){
+        try{
+            console.log(beerData);
+            const myJson = JSON.stringify(beerData);
+            console.log(myJson);
+        }
+        catch(e){
+            console.error('post controller error', e);
+            return e;
+        }
+    }
 }
 
 export default BeerController;
