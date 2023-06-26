@@ -12,7 +12,7 @@ function CardBeer(props) {
                     <Card.Title > { props.name } < /Card.Title> 
                     <Card.Text > { props.tagline } </Card.Text>
                     <Stack direction="horizontal" gap={1}>
-                        <Button variant = "primary" > Go < /Button> 
+                        <Button variant = "primary" >Go< /Button> 
                         {props.delete}
                     </Stack>
                 </Card.Body> 

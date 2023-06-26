@@ -24,6 +24,18 @@ class AxiosService {
             return message;
         }
     }
+
+    //requete delete axios vers l'api
+    static async deleteAxiosService(url){
+        try{
+            const res = await axios.delete(url)
+            return res;
+        }
+        catch(error){
+            const message = error;
+            return message
+        }
+    }
 }
 
 export default AxiosService;

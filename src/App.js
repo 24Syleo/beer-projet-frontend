@@ -65,6 +65,12 @@ function App() {
         console.log('creation',res);
     }
 
+    const supprBeer = (evt) => {
+        let beerId = evt.target.id;
+        console.log(beerId);
+        deleteBiere(beerId);
+    }
+
     useEffect(() => {
         list()
     }, []);
@@ -103,6 +109,7 @@ function App() {
                                 tagline = { beer.tagline }
                                 delete={<DeleteBeer
                                     id={beer._id}
+                                    suppr={}
                                     />}
                                 / > )
                             })
