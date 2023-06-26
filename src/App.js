@@ -67,8 +67,12 @@ function App() {
 
     const supprBeer = (evt) => {
         let beerId = evt.target.id;
-        console.log(beerId);
         deleteBiere(beerId);
+    }
+
+    const deleteBiere = async (beerId) => {
+        const res = await BeerController.deleteBeer(beerId);
+        console.log('effacer', res);
     }
 
     useEffect(() => {
@@ -109,7 +113,7 @@ function App() {
                                 tagline = { beer.tagline }
                                 delete={<DeleteBeer
                                     id={beer._id}
-                                    suppr={}
+                                    suppr={supprBeer}
                                     />}
                                 / > )
                             })

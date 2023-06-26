@@ -32,7 +32,7 @@ class AxiosService {
             return res;
         }
         catch(error){
-            const message = error;
+            const message = error.meaage;
             return message
         }
     }
