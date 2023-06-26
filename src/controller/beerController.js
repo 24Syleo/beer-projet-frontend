@@ -33,7 +33,6 @@ class BeerController {
     static async deleteBeer(beerId){
         try{
             let url = BeerController.urlBeer + beerId
-            console.log('url', url)
             const res = await AxiosService.deleteAxiosService(url);
             return res;
         }

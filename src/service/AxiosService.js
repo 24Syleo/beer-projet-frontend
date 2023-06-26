@@ -28,6 +28,7 @@ class AxiosService {
     //requete delete axios vers l'api
     static async deleteAxiosService(url){
         try{
+            console.log('axios url', url);
             const res = await axios.delete(url)
             return res;
         }
