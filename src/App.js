@@ -1,10 +1,12 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
+import BeerController from './controller/beerController.js';
+import IngController from './controller/ingController.js';
 import Home from './page/home.js';
 import BarreDeNav from './component/Navbar.js';
 import CardBeer from './component/CardBeer.js';
-import BeerController from './controller/beerController.js';
 import AddBeer from './component/AddBeer.js';
+import CheckIng from './component/checkIng.js';
 
 
 function App() {
