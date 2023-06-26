@@ -68,6 +68,7 @@ function App() {
     const supprBeer = (evt) => {
         let beerId = evt.target.id;
         deleteBiere(beerId);
+        window.location.reload();
     }
 
     const deleteBiere = async (beerId) => {
