@@ -22,9 +22,6 @@ function App() {
 
     console.log(beerList);
 
-    const beers = BeerController.getBeers();
-    console.log(beers);
-
     return ( <
             Home navbar = { < BarreDeNav
                 children = { < AddBeer / > }
