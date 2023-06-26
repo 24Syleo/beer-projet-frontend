@@ -8,7 +8,6 @@ class BeerController {
     static async getBeers() {
         try {
             const res = await AxiosService.getAxiosService(BeerController.urlBeer);
-            console.log(res.data);
             return res.data;
         } catch (e) {
             console.log('controller', e);

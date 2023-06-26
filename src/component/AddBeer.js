@@ -13,10 +13,10 @@ function AddBeer(props) {
             <Button variant = "secondary" onClick = { handleShow } >Ajouter une bière </Button>
             <Modal show = { show } onHide = { handleClose } >
             <Modal.Body>
-                <Form>
-                    <Form.Control className='my-2' type='text' placeholder='name' value={props.nameValue} onChange={props.nameChange} autoFocus/>
-                    <Form.Control className='my-2' type='text' placeholder='tagline' value={props.tagValue} onChange={props.tagChange} autoFocus/>
-                    <Form.Control className='my-2' type='text' placeholder='image' value={props.imgValue} onChange={props.imgChange} autoFocus/>
+                <Form onSubmit={props.validerBeer}>
+                    <Form.Control className='my-2' type='text' placeholder='name' value={props.Value} onChange={props.Change} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='tagline' value={props.Value} onChange={props.Change} autoFocus/>
+                    <Form.Control className='my-2' type='text' placeholder='image' value={props.Value} onChange={props.Change} autoFocus/>
                     <Button variant='outline-success' type='submit'>Valider</Button>
                 </Form>
             </Modal.Body>
