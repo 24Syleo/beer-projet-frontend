@@ -1,4 +1,6 @@
 import './App.css';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import BeerController from './controller/beerController.js';
 import IngController from './controller/ingController.js';
@@ -6,6 +8,7 @@ import Home from './page/home.js';
 import BarreDeNav from './component/Navbar.js';
 import AddBeer from './component/AddBeer.js';
 import CheckIng from './component/checkIng.js';
+import FigureExample from './page/features.js';
 
 function App() {
 
@@ -83,7 +86,14 @@ function App() {
                     }
                 />}
          />
-        <Home/>
-    </>);
+    <BrowserRouter>
+        <Routes>
+            <Route index element={<Home/>}/>
+            <Route path='home' element={<Home/>}/>
+            <Route path="features" element={<FigureExample/>}/>
+        </Routes>
+    </BrowserRouter>
+    </>
+    );
 }
 export default App;
