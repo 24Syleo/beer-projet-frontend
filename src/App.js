@@ -7,6 +7,7 @@ import BarreDeNav from './component/Navbar.js';
 import CardBeer from './component/CardBeer.js';
 import AddBeer from './component/AddBeer.js';
 import CheckIng from './component/checkIng.js';
+import DeleteBeer from './component/DeleteBeer.js';
 
 
 function App() {
@@ -100,6 +101,9 @@ function App() {
                                 image = { beer.image_url }
                                 name = { beer.name }
                                 tagline = { beer.tagline }
+                                delete={<DeleteBeer
+                                    id={beer._id}
+                                    />}
                                 / > )
                             })
                     }
