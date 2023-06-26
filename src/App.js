@@ -86,8 +86,8 @@ function App() {
         listIng()
     }, []);
 
-    return ( <
-            Home navbar = { < BarreDeNav
+    return (<>
+            <BarreDeNav
                 children = { < AddBeer
                         validerBeer={valider}
                         ValueName={nameBeer}
@@ -107,7 +107,9 @@ function App() {
                             })
                         }
                     / > }
-                / > }
+                />
+            
+            <Home
                 card = {
                     beerList.map((beer, i) => {
                             return ( < CardBeer key = { i }
@@ -136,6 +138,7 @@ function App() {
                                 / > )
                             })
                     }
-                    />);
+                />
+                </>);
                 }
                 export default App;
