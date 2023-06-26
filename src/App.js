@@ -8,6 +8,8 @@ import CardBeer from './component/CardBeer.js';
 import AddBeer from './component/AddBeer.js';
 import CheckIng from './component/checkIng.js';
 import DeleteBeer from './component/DeleteBeer.js';
+import ReadBeer from './component/ReadBeer.js';
+import ListGroupIng from './component/IngList.js';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         const response = await BeerController.getBeers();
         setBeerList(response);
     };
+
+    console.log(beerList)
 
     const listIng = async() => {
         const response = await IngController.getIngredients();
@@ -112,6 +116,21 @@ function App() {
                                 image = { beer.image_url }
                                 name = { beer.name }
                                 tagline = { beer.tagline }
+                                read={<ReadBeer
+                                    title={beer.name}
+                                    tagline={beer.tagline}
+                                    ing={beer.ingredients.map((ing,i) => {
+                                        return (<ListGroupIng
+                                            key={i}
+                                            cereal={ing.cereal}
+                                            name={ing.name}
+                                            amount={ing.amount.map((amt,i) => {
+                                                return(amt.value + ' ' + amt.unit )
+                                            })}
+                                        />)
+                                    }
+                                        )}
+                                    />}
                                 delete={<DeleteBeer
                                     id={beer._id}
                                     suppr={supprBeer}
