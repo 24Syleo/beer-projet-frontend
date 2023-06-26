@@ -4,27 +4,16 @@ import BeerController from './controller/beerController.js';
 import IngController from './controller/ingController.js';
 import Home from './page/home.js';
 import BarreDeNav from './component/Navbar.js';
-import CardBeer from './component/CardBeer.js';
 import AddBeer from './component/AddBeer.js';
 import CheckIng from './component/checkIng.js';
-import DeleteBeer from './component/DeleteBeer.js';
-import ReadBeer from './component/ReadBeer.js';
-import ListGroupIng from './component/IngList.js';
-
 
 function App() {
 
-    const [beerList, setBeerList] = useState([]);
     const [ingList, setIngList]=useState([]);
     const [nameBeer, setNameBeer] = useState();
     const [tagBeer, setTagBeer] = useState();
     const [imgBeer, setImgBeer] = useState();
     const [ingBeer, setIngBeer] = useState([])
-
-    const list = async() => {
-        const response = await BeerController.getBeers();
-        setBeerList(response);
-    };
 
     const listIng = async() => {
         const response = await IngController.getIngredients();
@@ -67,78 +56,34 @@ function App() {
         console.log('creation',res);
     }
 
-    const supprBeer = (evt) => {
-        let beerId = evt.target.id;
-        deleteBiere(beerId);
-        window.location.reload();
-    }
-
-    const deleteBiere = async (beerId) => {
-        const res = await BeerController.deleteBeer(beerId);
-        console.log('effacer', res);
-    }
-
-    useEffect(() => {
-        list()
-    }, []);
-
     useEffect(() => {
         listIng()
     }, []);
 
-    return (<>
-            <BarreDeNav
-                children = { < AddBeer
-                        validerBeer={valider}
-                        ValueName={nameBeer}
-                        ChangeName={nameChange}
-                        ValueTag={tagBeer}
-                        ChangeTag={tagChange}
-                        ValueImg={imgBeer}
-                        ChangeImg={imgChange}
-                        checkIng={
-                            ingList.map((ing,i) => {
-                                return(<CheckIng
-                                    key={i}
-                                    idIng={ing._id}
-                                    Name={ing.name}
-                                    ChangeIng={ingChange}
-                                    />)
-                            })
-                        }
-                    / > }
-                />
-            
-            <Home
-                card = {
-                    beerList.map((beer, i) => {
-                            return ( < CardBeer key = { i }
-                                image = { beer.image_url }
-                                name = { beer.name }
-                                tagline = { beer.tagline }
-                                read={<ReadBeer
-                                    title={beer.name}
-                                    tagline={beer.tagline}
-                                    ing={beer.ingredients.map((ing,i) => {
-                                        return (<ListGroupIng
-                                            key={i}
-                                            cereal={ing.cereal}
-                                            name={ing.name}
-                                            amount={ing.amount.map((amt,i) => {
-                                                return(amt.value + ' ' + amt.unit )
-                                            })}
-                                        />)
-                                    }
-                                        )}
-                                    />}
-                                delete={<DeleteBeer
-                                    id={beer._id}
-                                    suppr={supprBeer}
-                                    />}
-                                / > )
-                            })
+    return (
+    <>
+        <BarreDeNav
+            children = { < AddBeer
+                validerBeer={valider}
+                ValueName={nameBeer}
+                ChangeName={nameChange}
+                ValueTag={tagBeer}
+                ChangeTag={tagChange}
+                ValueImg={imgBeer}
+                ChangeImg={imgChange}
+                checkIng={
+                    ingList.map((ing,i) => {
+                        return(<CheckIng
+                            key={i}
+                            idIng={ing._id}
+                            Name={ing.name}
+                            ChangeIng={ingChange}
+                            />)
+                        })
                     }
-                />
-                </>);
-                }
-                export default App;
+                />}
+         />
+        <Home/>
+    </>);
+}
+export default App;
