@@ -26,8 +26,6 @@ function App() {
         setBeerList(response);
     };
 
-    console.log(beerList)
-
     const listIng = async() => {
         const response = await IngController.getIngredients();
         setIngList(response);
