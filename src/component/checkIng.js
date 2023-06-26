@@ -1,4 +1,4 @@
-import Form from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 import React from 'react';
 
 function CheckIng(props){

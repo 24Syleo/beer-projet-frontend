@@ -8,10 +8,8 @@ class IngController{
     static async getIngredients(){
         try {
             const res = await AxiosService.getAxiosService(IngController.urlIng);
-            console.log(res.data);
             return res.data;
         } catch (e) {
-            console.log('controller', e);
             return e;
         }
     }

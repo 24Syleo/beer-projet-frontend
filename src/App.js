@@ -12,14 +12,21 @@ import CheckIng from './component/checkIng.js';
 function App() {
 
     const [beerList, setBeerList] = useState([]);
+    const [ingList, setIngList]=useState([]);
     const [nameBeer, setNameBeer] = useState();
     const [tagBeer, setTagBeer] = useState();
     const [imgBeer, setImgBeer] = useState();
+    const [ingBeer, setIngBeer] = useState([])
 
     const list = async() => {
         const response = await BeerController.getBeers();
         setBeerList(response);
     };
+
+    const listIng = async() => {
+        const response = await IngController.getIngredients();
+        setIngList(response);
+    }
 
     const nameChange = (evt)=>{
         console.log(evt.target.value);
@@ -51,7 +58,11 @@ function App() {
         list()
     }, []);
 
+    useEffect(() => {
+        listIng();
+    }, []);
 
+    console.log(ingList);
 
     return ( <
             Home navbar = { < BarreDeNav
@@ -63,6 +74,15 @@ function App() {
                         ChangeTag={tagChange}
                         ValueImg={imgBeer}
                         ChangeImg={imgChange}
+                        checkIng={
+                            ingList.map((ing,i) => {
+                                return(<CheckIng
+                                    key={i}
+                                    idIng={ing._id}
+                                    Name={ing.name}
+                                    />)
+                            })
+                        }
                     / > }
                 / > }
                 card = {
