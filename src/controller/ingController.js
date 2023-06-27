@@ -1,8 +1,9 @@
 import AxiosService from '../service/AxiosService.js';
+import { hote } from '../config/config.js';
 
 class IngController{
 
-    static urlIng = 'http://localhost:3100/ingredient';
+    static urlIng = hote + 'ingredient/';
 
     //listes des ingredients
     static async getIngredients(){

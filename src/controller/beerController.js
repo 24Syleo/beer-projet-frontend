@@ -1,8 +1,9 @@
 import AxiosService from '../service/AxiosService.js';
+import { hote } from '../config/config.js';
 
 class BeerController {
 
-    static urlBeer = 'http://localhost:3100/beer/';
+    static urlBeer = hote + 'beer/'
 
     //Liste de bieres
     static async getBeers() {
