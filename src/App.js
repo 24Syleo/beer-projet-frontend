@@ -13,7 +13,7 @@ import FigureExample from './page/features.js';
 function App() {
 
     socket.on('connection', ()=>{
-        console.log('connecter avec le back');
+        console.log('connecter a');
     })
 
     const [ingList, setIngList]=useState([]);
