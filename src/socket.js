@@ -1,6 +1,8 @@
 import { io } from 'socket.io-client';
-import hote from './config/config.js';
+import { hote } from './config/config.js';
 
-const socket = io(hote);
+const socket = io(hote, {
+    autoConnect:false
+});
 
 export { socket };

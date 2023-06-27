@@ -1,4 +1,5 @@
 import './App.css';
+import { socket } from './socket.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import BeerController from './controller/beerController.js';
@@ -10,6 +11,10 @@ import CheckIng from './component/checkIng.js';
 import FigureExample from './page/features.js';
 
 function App() {
+
+    socket.on('connection', ()=>{
+        console.log('connecter avec le back');
+    })
 
     const [ingList, setIngList]=useState([]);
     const [nameBeer, setNameBeer] = useState();
